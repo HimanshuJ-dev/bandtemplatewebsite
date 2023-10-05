@@ -1,0 +1,74 @@
+{
+  "stored_messages": [
+    {
+      "id": 1,
+      "username": "first user",
+      "useremail": "first@mail.com",
+      "usermessage": "you are awesome",
+      "userid": "u1234567890"
+    },
+    {
+      "username": "himasnhu",
+      "useremail": "samplemail@mail.com",
+      "usermessage": "this is not my first message",
+      "userid": "um1696510540845",
+      "id": 2
+    },
+    {
+      "username": "no name",
+      "useremail": "no name@mail.com",
+      "usermessage": "this is so much fun",
+      "userid": "um1696510570853",
+      "id": 3
+    },
+    {
+      "username": "dummy",
+      "useremail": "dummy@mail.com",
+      "usermessage": "this is a dummy message",
+      "userid": "um1696513754426",
+      "id": 4
+    },
+    {
+      "username": "dummy2",
+      "useremail": "this@mail.com",
+      "usermessage": "commenting is fun",
+      "userid": "um1696513776722",
+      "id": 5
+    },
+    {
+      "username": "harrry potter",
+      "useremail": "harrypotter@mail.com",
+      "usermessage": "vingardium leviosa",
+      "userid": "um1696513807106",
+      "id": 6
+    },
+    {
+      "username": "albus dumbledore",
+      "useremail": "hogwartsmaster@mail.com",
+      "usermessage": "i am so old and wise and my back hurt",
+      "userid": "um1696513851814",
+      "id": 7
+    },
+    {
+      "username": "name202",
+      "useremail": "name202@mail,com",
+      "usermessage": "thisdmdvkfsbl",
+      "userid": "um1696513915560",
+      "id": 8
+    },
+    {
+      "username": "this message",
+      "useremail": "mesage@mail.com",
+      "usermessage": "mesage at 7 30",
+      "userid": "um1696514455673",
+      "id": 9
+    },
+    {
+      "username": "himanshu",
+      "useremail": "this is the try block",
+      "usermessage": "try catch is cool",
+      "userid": "um1696532170057",
+      "id": 10
+    }
+  ]
+}

@@ -124,7 +124,7 @@ merchspawner.innerHTML = merchspawnerhtml;
 window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY;
-        let offset = sec.offsetTop - 100;
+        let offset = sec.offsetTop - 200;
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
 
@@ -148,8 +148,43 @@ function savedetails() {
     storedmessages.push(message);
     console.log(storedmessages);
 
-    alert('message saved from ' + username.value + '\n' + useremail.value + '\n' + usermessage.value);
+    // alert('message saved from ' + username.value + '\n' + useremail.value + '\n' + usermessage.value);
     // console.log(messages);
+
+    
+
+    function creatinguser() {
+
+
+        let options = {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify({
+                "username": username.value,
+                "useremail": useremail.value,
+                "usermessage": usermessage.value,
+                "userid": 'um' + Date.now()
+            },)
+        }
+
+        async function addnow() {
+            try {
+                await fetch("http://localhost:3000/stored_messages", options).then(
+                    (response) => response.json()
+                ).then((value) => console.log("added one time"));
+                alert('message saved')
+            } catch (error) {
+                alert('could not save message!\nPlease try again later...');
+            }
+        }
+
+        addnow();
+
+    }
+
+    creatinguser();
 
     username.value = "";
     useremail.value = "";

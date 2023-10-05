@@ -110,7 +110,7 @@
                     <ul>
                         <li><a href="#merchandise">Merchandise</a></li>
                         <li><a href="#extras">Extras</a></li>
-                        <li><a href="#medias">Media</a></li>
+                        <li><a href="usermessagelist.html">Messages</a></li>
                     </ul>
                 </li>
             </ul>
@@ -250,6 +250,13 @@
                 <strong>contact</strong>
             </div>
             <h4>Fan? Drop a note!</h4>
+            <div class="visitinglocation">
+                <strong>come visit us sometime</strong>
+                <p><iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190255.43573815064!2d-87.89677009193241!3d41.8338709815539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2c3cd0f4cbed%3A0xafe0a6ad09c0c000!2sChicago%2C%20IL%2C%20USA!5e0!3m2!1sen!2sin!4v1696525566096!5m2!1sen!2sin"
+                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+                </div>
             <div class="contactdetailsdiv">
                 <div class="contactdetails">
                     <div class="contactlocation">
@@ -271,7 +278,7 @@
                         <input id="useremail" type="email" placeholder="Email">
                     </div>
                     <input id="usermessagetext" type="text" placeholder="Message">
-                    <button id="usermessagesubmit" class="usersendbutton">SEND</button>
+                    <button id="usermessagesubmit" class="usersendbutton" onclick="creatinguser()">SEND</button>
                 </div>
             </div>
         </div>
@@ -294,6 +301,5 @@
     <script src="concerts.js" type="module"></script>
     <script src="storedmessages.js" type="module"></script>
     <script src="script.js" type="module"></script>
-    <!-- <div onload="test()" style="display: none;"></div> -->
 </body>
 </html>

@@ -319,6 +319,58 @@ section:nth-child(even){
     background: #323946;
 }
 
+#userMessages {
+    display: block;
+    min-height: 100vh;
+    padding: 100px 20px;
+    background: white;
+}
+
+.messagespageheading{
+    text-align: center;
+}
+
+.messagespageheading strong{
+    font-size: 60px;
+    color: black;
+    
+}
+
+.messagespageheading h1{
+    font-size: 30px;
+    color: rgb(122, 122, 122);
+    font-style: italic;
+}
+
+.messagescont{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.singleusermessage{
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.singleusermessage h1{
+    font-size: 15px;
+    color: gray;
+    text-decoration: underline;
+}
+
+.singleusermessage strong{
+    font-size: 30px;
+    color: red;
+}
+
+.singleusermessage h2{
+    font-size: 20px;
+}
+
 .homediv{
     background-image: url(images/concert_background.jpg);
     background-position: center;
@@ -582,7 +634,29 @@ section:nth-child(even){
 
 .contactdiv{
     text-align: center;
-    height: 80vh;
+    height: auto;
+    padding-bottom: 100px;
+}
+
+.visitinglocation{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.visitinglocation strong{
+    font-size: 90px;
+    width: 400px;
+    text-align: start;
+    margin: 50px;
+}
+
+.visitinglocation p{
+    border: solid 2px black;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .contactheading{
