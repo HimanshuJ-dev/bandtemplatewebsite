@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,92 +17,90 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- <script src="functioncontainer.js"></script> -->
     <script>
-        var gloabalemail = "sample@mail.com";
+        var globalEmail = "sample@mail.com";
         function togglePopUp() {
-                const floatingcont = document.getElementById('floatcont');
-                floatingcont.classList.toggle('showing');
-                const floatingtkt = document.getElementById('floatticket');
-                floatingtkt.classList.toggle('showing');
-            }
+            const floatingCont = document.getElementById('floatCont');
+            floatingCont.classList.toggle('showing');
+            const floatingTkt = document.getElementById('floatTicket');
+            floatingTkt.classList.toggle('showing');
+        }
         function toggleConfirmation() {
-                const floatingcont = document.getElementById('confirmcont');
-                floatingcont.classList.toggle('showing');
-                const floatingtkt = document.getElementById('floatconfirm');
-                floatingtkt.classList.toggle('showing');
-            }
+            const floatingCont = document.getElementById('confirmCont');
+            floatingCont.classList.toggle('showing');
+            const floatingTkt = document.getElementById('flaotConfirm');
+            floatingTkt.classList.toggle('showing');
+        }
 
         function trigger() {
-                // console.log('function did run');
-                // console.log(gloabalemail);
-                const floatingconfirmemail = document.getElementById('finalconfirmemail');
-                floatingconfirmemail.innerHTML = gloabalemail;
-                togglePopUp();
-                toggleConfirmation();
-            }
-        
+            const floatingConfirmEmail = document.getElementById('finalConfirmEmail');
+            floatingConfirmEmail.innerHTML = globalEmail;
+            togglePopUp();
+            toggleConfirmation();
+        }
 
-        function insidehtml(ctimage, ctmonth, ctlocation, ctdate, ctdesc, ctid, ctprice) {
-            const floatingimage = document.getElementById('floatingticketimage');
-            const floatinglocation = document.getElementById('floatingticketlocation');
-            const floatingdate = document.getElementById('floatingticketdate');
-            const floatingheading = document.getElementById('floatingticketheading');
-            const floatingdesc = document.getElementById('floatingticketdesc');
-            const floatingprice = document.getElementById('floatingticketprice');
-            const floatingemail = document.getElementById('floatingticketemail');
-            const floatingnooftickets = document.getElementById('noOfTickets');
-            const floatingtotalprice = document.getElementById('floatingtickettotalprice');
-            const floatingbookbtn = document.getElementById('flaotingbooknowbtn');
-            // const floatingconfirmemail = document.getElementById('finalconfirmemail');
 
-            gloabalemail = floatingemail.value;
+        function insideHtml(ctImage, ctMonth, ctLocation, ctDate, ctDesc, ctId, ctPrice) {
+            const floatingImage = document.getElementById('floatingTicketImage');
+            const floatingLocation = document.getElementById('floatingTicketLocation');
+            const floatingDate = document.getElementById('floatingTicketDate');
+            const floatingHeading = document.getElementById('floatingTicketHeading');
+            const floatingDesc = document.getElementById('floatingTicketDesc');
+            const floatingPrice = document.getElementById('floatingTicketPrice');
+            const floatingEmail = document.getElementById('floatingTicketEmail');
+            const floatingNoOfTickets = document.getElementById('noOfTickets');
+            const floatingTotalPrice = document.getElementById('floatingTicketTotalPrice');
+            const floatingBookBtn = document.getElementById('floatingBookNowBtn');
 
-            floatingemail.addEventListener('change', ()=>{
-                gloabalemail = floatingemail.value;
+            globalEmail = floatingEmail.value;
+
+            floatingEmail.addEventListener('change', () => {
+                globalEmail = floatingEmail.value;
             })
 
-            
 
-            floatingimage.innerHTML = `<img src="${ctimage}" alt="">`;
-            floatingemail.value = "";
-            floatingnooftickets.value = '1';
-            floatinglocation.innerHTML = ctlocation;
-            floatingdate.innerHTML = ctdate;
-            floatingheading.innerHTML = `This ${ctmonth} we are coming to ${ctlocation}.`;
-            floatingdesc.innerHTML = ctdesc;
-            floatingprice.innerHTML = `Rs. ${ctprice}`;
-            floatingtotalprice.innerHTML = `Rs. ${ctprice}.00`;
-            floatingnooftickets.addEventListener("change", () => {
-                var updatedprice = Number(ctprice) * floatingnooftickets.value;
-                floatingtotalprice.innerHTML = `Rs. ${updatedprice}.00`;
+
+            floatingImage.innerHTML = `<img src="${ctImage}" alt="">`;
+            floatingEmail.value = "";
+            floatingNoOfTickets.value = '1';
+            floatingLocation.innerHTML = ctLocation;
+            floatingDate.innerHTML = ctDate;
+            floatingHeading.innerHTML = `This ${ctMonth} we are coming to ${ctLocation}.`;
+            floatingDesc.innerHTML = ctDesc;
+            floatingPrice.innerHTML = `Rs. ${ctPrice}`;
+            floatingTotalPrice.innerHTML = `Rs. ${ctPrice}.00`;
+            floatingNoOfTickets.addEventListener("change", () => {
+                var updatedPrice = Number(ctPrice) * floatingNoOfTickets.value;
+                floatingTotalPrice.innerHTML = `Rs. ${updatedPrice}.00`;
             });
-            const useremailforbooking = floatingemail.value;
+            const userEmailForBooking = floatingEmail.value;
 
-            // floatingbookbtn.addEventListener('click', trigger);
-            // floatingbookbtn.removeEventListener('click', trigger);
+            // floatingBookBtn.addEventListener('click', trigger);
+            // floatingBookBtn.removeEventListener('click', trigger);
             var form = document.getElementById("myForm");
-            function handleForm(event) { 
+            function handleForm(event) {
                 event.preventDefault();
             }
             form.addEventListener('submit', handleForm);
-            
+
             togglePopUp();
         }
 
-        
 
-        function bookticketfinal(useremailforbooking) {
-                togglePopUp();
-                alert('this ' + useremailforbooking);
-            }
+
+        function bookticketfinal(userEmailForBooking) {
+            togglePopUp();
+            alert('this ' + userEmailForBooking);
+        }
     </script>
 </head>
+
 <body>
 
     <header>
 
         <input type="checkbox" id="menu-bar">
-        <label for="menu-bar" id="hamburgericon"><i class="fa-solid fa-bars fa-2x"></i></label>
-        
+        <label for="menu-bar" id="hamburgerIcon"><i class="fa-solid fa-bars fa-2x"></i></label>
+
 
         <nav class="nav">
             <ul>
@@ -122,26 +121,26 @@
         <i id="nav-search-button" class="fa-solid fa-magnifying-glass fa-xl"></i>
     </header>
 
-    <div class="floatingcontainer" id="floatcont">
-        <div class="floatingpopup" id="floatticket">
-            <div class="floatingticketcontainer">
-                <div class="floatingimageandname">
-                    <div id="floatingticketimage">
-                    <img src="/images/india.jpg" alt="">
+    <div class="floatingContainer" id="floatCont">
+        <div class="floatingPopUp" id="floatTicket">
+            <div class="floatingTicketContainer">
+                <div class="floatingImageAndName">
+                    <div id="floatingTicketImage">
+                        <img src="/images/india.jpg" alt="">
                     </div>
-                    <h1 id="floatingticketlocation">Delhi, India</h4>
-                    <h2 id="floatingticketdate">20 October 2023</h2>
+                    <h1 id="floatingTicketLocation">Delhi, India</h4>
+                        <h2 id="floatingTicketDate">20 October 2023</h2>
                 </div>
-                <div class="floatingdetailsandbooking">
-                    <h1 id="floatingticketheading">This October we are coming to Delhi, India.</h1>
-                    <p id="floatingticketdesc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo 
-                        modi tenetur enim minus itaque, consequuntur facilis labore vero 
-                        impedit voluptatibus iste dolores dolorem. Dicta odio 
+                <div class="floatingDetailsAndBooking">
+                    <h1 id="floatingTicketHeading">This October we are coming to Delhi, India.</h1>
+                    <p id="floatingTicketDesc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo
+                        modi tenetur enim minus itaque, consequuntur facilis labore vero
+                        impedit voluptatibus iste dolores dolorem. Dicta odio
                         optio corporis doloribus nemo nihil?</p>
-                    <h4>Ticket Price: <span id="floatingticketprice">Rs. 4,999.00</span></h4>
+                    <h4>Ticket Price: <span id="floatingTicketPrice">Rs. 4,999.00</span></h4>
                     <form id="myForm" onsubmit="trigger()">
-                        <input id="floatingticketemail" type="email" placeholder="Enter your email" required>
-                        <div class="floatingnumberoftickets">
+                        <input id="floatingTicketEmail" type="email" placeholder="Enter your email" required>
+                        <div class="floatingNumberOFTickets">
                             <div>
                                 <label for="noOfTickets">Number of Tickets:</label>
                                 <select name="noOfTickets" id="noOfTickets">
@@ -157,10 +156,10 @@
                                     <option value="10">10</option>
                                 </select>
                             </div>
-                            <h3>Total amount: <span id="floatingtickettotalprice">Rs. 4,999.00</span></h3>
+                            <h3>Total amount: <span id="floatingTicketTotalPrice">Rs. 4,999.00</span></h3>
                         </div>
                         <div class="floatingbookingbtncontainer">
-                            <button id="flaotingbooknowbtn" type="submit">Book Now</button>
+                            <button id="floatingBookNowBtn" type="submit">Book Now</button>
                             <button id="floatingcancelbookbtn" onclick="togglePopUp()">Cancel</button>
                         </div>
                     </form>
@@ -168,27 +167,27 @@
             </div>
         </div>
     </div>
-    <div class="floatingconfirmationcontainer" id="confirmcont">
-        <div class="floatingconfirmation" id="floatconfirm">
+    <div class="floatingConfirmationContainer" id="confirmCont">
+        <div class="floatingConfirmation" id="flaotConfirm">
             <h1>Thank you for considering</h1>
             <h2>Your ticket details and final payment link will be sent to</h2>
-            <h3 id="finalconfirmemail">Your email address</h3>
+            <h3 id="finalConfirmEmail">Your email address</h3>
             <h4>We will see you in the concert</h4>
             <button onclick="toggleConfirmation()">OK</button>
         </div>
     </div>
 
     <section id="home">
-        <div class="homediv">
-            <div class="homedivtext">
+        <div class="homeDiv">
+            <div class="homeDivText">
                 <strong>Los Angeles</strong>
                 <p>We had the best time playing at Venice Beach</p>
             </div>
         </div>
     </section>
     <section id="band">
-        <div class="banddiv">
-            <div class="banddivtext">
+        <div class="bandDiv">
+            <div class="bandDivText">
                 <strong>The Band</strong>
                 <h4>We Love Music</h4>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga quae accusantium
@@ -204,41 +203,41 @@
                     commodi repellat at, inventore id voluptas perspiciatis veritatis vel, reiciendis
                     fugit rem cupiditate magni ad. Numquam est tempora dolorem?</p>
             </div>
-            <div class="banddivmembers">
-                <div class="membercard">
+            <div class="bandDivMembers">
+                <div class="memberCard">
                     <strong>Name</strong>
-                    <div class="memberimage"  style="background-image: url(images/guitarist.jpg);"></div>
+                    <div class="memberImage" style="background-image: url(images/guitarist.jpg);"></div>
                 </div>
-                <div class="membercard">
+                <div class="memberCard">
                     <strong>Name</strong>
-                    <div class="memberimage" style="background-image: url(images/guitarist.jpg);"></div>
+                    <div class="memberImage" style="background-image: url(images/guitarist.jpg);"></div>
                 </div>
-                <div class="membercard">
+                <div class="memberCard">
                     <strong>Name</strong>
-                    <div class="memberimage"  style="background-image: url(images/guitarist.jpg);"></div>
+                    <div class="memberImage" style="background-image: url(images/guitarist.jpg);"></div>
                 </div>
             </div>
         </div>
     </section>
     <section id="tour">
-        <div class="tourdiv">
-            <div class="tourheadingdiv">
-            <strong>TOUR DATES</strong>
+        <div class="tourDiv">
+            <div class="tourHeadingDiv">
+                <strong>TOUR DATES</strong>
             </div>
             <h4>Remember to book you tickets</h4>
-            <div class="bookingmonths" id="concertmonthlyspawner">
+            <div class="bookingMonths" id="concertMonthlySpawner">
             </div>
-            <div class="bookingtickets" id="concertticketspawner">   
+            <div class="bookingTickets" id="concertTicketSpawner">
             </div>
         </div>
     </section>
     <section id="merchandise">
-        <div class="tourdiv">
-            <div class="tourheadingdiv">
+        <div class="tourDiv">
+            <div class="tourHeadingDiv">
                 <strong>MERCHANDISE</strong>
             </div>
             <h4>Get our latest merch</h4>
-            <div class="bookingtickets" id="merchspawner">
+            <div class="bookingTickets" id="merchSpawner">
             </div>
         </div>
     </section>
@@ -250,48 +249,48 @@
 
     </section>
     <section id="contact">
-        <div class="contactdiv">
-            <div class="contactheading">
+        <div class="contactDiv">
+            <div class="contactHeading">
                 <strong>contact</strong>
             </div>
             <h4>Fan? Drop a note!</h4>
-            <div class="visitinglocation">
+            <div class="visitingLocation">
                 <strong>come visit us sometime</strong>
                 <p><iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190255.43573815064!2d-87.89677009193241!3d41.8338709815539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2c3cd0f4cbed%3A0xafe0a6ad09c0c000!2sChicago%2C%20IL%2C%20USA!5e0!3m2!1sen!2sin!4v1696525566096!5m2!1sen!2sin"
-                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe></p>
-                </div>
-            <div class="contactdetailsdiv">
-                <div class="contactdetails">
-                    <div class="contactlocation">
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190255.43573815064!2d-87.89677009193241!3d41.8338709815539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2c3cd0f4cbed%3A0xafe0a6ad09c0c000!2sChicago%2C%20IL%2C%20USA!5e0!3m2!1sen!2sin!4v1696525566096!5m2!1sen!2sin"
+                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+            </div>
+            <div class="contactDetailsDiv">
+                <div class="contactDetails">
+                    <div class="contactLocation">
                         <i class="fa-solid fa-location-dot fa-2xs"></i>
                         <strong>Chicago, US</strong>
                     </div>
-                    <div class="contactphone">
+                    <div class="contactPhone">
                         <i class="fa-solid fa-phone fa-2xs"></i>
                         <strong>Phone: +00 151515</strong>
                     </div>
-                    <div class="contactemail">
+                    <div class="contactEmail">
                         <i class="fa-solid fa-envelope fa-2xs"></i>
                         <strong>Email: mail@mail.com</strong>
                     </div>
                 </div>
-                <div class="usermessage">
-                    <div class="userdetails">
-                        <input id="username" type="text" placeholder="Name">
-                        <input id="useremail" type="email" placeholder="Email">
+                <div class="userMessage">
+                    <div class="userDetails">
+                        <input id="userName" type="text" placeholder="Name">
+                        <input id="userEmail" type="email" placeholder="Email">
                     </div>
-                    <input id="usermessagetext" type="text" placeholder="Message">
-                    <button id="usermessagesubmit" class="usersendbutton" onclick="creatinguser()">SEND</button>
+                    <input id="userMessageText" type="text" placeholder="Message">
+                    <button id="userMessageSubmit" class="userSendButton" onclick="creatingUser()">SEND</button>
                 </div>
             </div>
         </div>
     </section>
     <hr>
     <footer>
-        <div class="externallinks">
-            <div class="socialmediadiv">
+        <div class="externalLinks">
+            <div class="socialMediaDiv">
                 <i class="fa-brands fa-square-facebook fa-2x"></i>
                 <i class="fa-brands fa-instagram fa-2x"></i>
                 <i class="fa-brands fa-square-snapchat fa-2x"></i>
@@ -307,4 +306,5 @@
     <script src="storedmessages.js" type="module"></script>
     <script src="script.js" type="module"></script>
 </body>
+
 </html>
