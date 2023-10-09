@@ -3,7 +3,7 @@ export const concert = [
         concertMonth: "october",
         concertLocation: "Delhi, India",
         concertImage: "./images/india.jpg",
-        concertDate: "20 October 2023",
+        concertDate: "19 january 2023",
         concertDesc: "We are coming to India this time, and look forward to seeing you all there with us to enjoy our humble performance",
         concertId: 20102023,
         concertPrice: 3999
@@ -146,31 +146,31 @@ export const merchandise = [
     {
         merchCategory: "T-Shirt",
         merchName: "Black Tees",
-        merchImage: "/images/blacktees.jpg",
+        merchImage: "/images/new_blackTees.jpg",
         merchPrize: "Rs 4,999"
     },
     {
         merchCategory: "Denim",
         merchName: "Damaged Jeans",
-        merchImage: "/images/jeans.jpg",
+        merchImage: "/images/new_jeansDenim.jpg",
         merchPrize: "Rs 7,999"
     },
     {
         merchCategory: "Hoodies",
         merchName: "Red Hoodie",
-        merchImage: "/images/hoodie.jpg",
+        merchImage: "/images/new_hoodie.jpg",
         merchPrize: "Rs 9,999"
     },
     {
         merchCategory: "Hats",
         merchName: "Beach Theme Hat",
-        merchImage: "/images/hat.jpg",
+        merchImage: "/images/new_hat.jpg",
         merchPrize: "Rs 1,499"
     },
     {
         merchCategory: "Bags",
         merchName: "Gray Bag",
-        merchImage: "/images/bag.jpg",
+        merchImage: "/images/new_bag.jpg",
         merchPrize: "Rs 2,399"
     },
 ]

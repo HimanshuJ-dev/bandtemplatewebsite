@@ -76,10 +76,13 @@
             });
             const useremailforbooking = floatingemail.value;
 
-            floatingbookbtn.addEventListener('click', trigger);
+            // floatingbookbtn.addEventListener('click', trigger);
             // floatingbookbtn.removeEventListener('click', trigger);
-
-            
+            var form = document.getElementById("myForm");
+            function handleForm(event) { 
+                event.preventDefault();
+            }
+            form.addEventListener('submit', handleForm);
             
             togglePopUp();
         }
@@ -136,29 +139,31 @@
                         impedit voluptatibus iste dolores dolorem. Dicta odio 
                         optio corporis doloribus nemo nihil?</p>
                     <h4>Ticket Price: <span id="floatingticketprice">Rs. 4,999.00</span></h4>
-                    <input id="floatingticketemail" type="email" placeholder="Enter your email">
-                    <div class="floatingnumberoftickets">
-                        <div>
-                            <label for="noOfTickets">Number of Tickets:</label>
-                            <select name="noOfTickets" id="noOfTickets">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
+                    <form id="myForm" onsubmit="trigger()">
+                        <input id="floatingticketemail" type="email" placeholder="Enter your email" required>
+                        <div class="floatingnumberoftickets">
+                            <div>
+                                <label for="noOfTickets">Number of Tickets:</label>
+                                <select name="noOfTickets" id="noOfTickets">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <h3>Total amount: <span id="floatingtickettotalprice">Rs. 4,999.00</span></h3>
                         </div>
-                        <h3>Total amount: <span id="floatingtickettotalprice">Rs. 4,999.00</span></h3>
-                    </div>
-                    <div class="floatingbookingbtncontainer">
-                        <button id="flaotingbooknowbtn">Book Now</button>
-                        <button id="floatingcancelbookbtn" onclick="togglePopUp()">Cancel</button>
-                    </div>
+                        <div class="floatingbookingbtncontainer">
+                            <button id="flaotingbooknowbtn" type="submit">Book Now</button>
+                            <button id="floatingcancelbookbtn" onclick="togglePopUp()">Cancel</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
