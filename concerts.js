@@ -146,31 +146,31 @@ export const merchandise = [
     {
         merchCategory: "T-Shirt",
         merchName: "Black Tees",
-        merchImage: "/images/new_blackTees.jpg",
+        merchImage: "./images/new_blackTees.jpg",
         merchPrize: "Rs 4,999"
     },
     {
         merchCategory: "Denim",
         merchName: "Damaged Jeans",
-        merchImage: "/images/new_jeansDenim.jpg",
+        merchImage: "./images/new_jeansDenim.jpg",
         merchPrize: "Rs 7,999"
     },
     {
         merchCategory: "Hoodies",
         merchName: "Red Hoodie",
-        merchImage: "/images/new_hoodie.jpg",
+        merchImage: "./images/new_hoodie.jpg",
         merchPrize: "Rs 9,999"
     },
     {
         merchCategory: "Hats",
         merchName: "Beach Theme Hat",
-        merchImage: "/images/new_hat.jpg",
+        merchImage: "./images/new_hat.jpg",
         merchPrize: "Rs 1,499"
     },
     {
         merchCategory: "Bags",
         merchName: "Gray Bag",
-        merchImage: "/images/new_bag.jpg",
+        merchImage: "./images/new_bag.jpg",
         merchPrize: "Rs 2,399"
     },
 ]
