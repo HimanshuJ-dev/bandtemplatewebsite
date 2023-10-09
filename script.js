@@ -102,7 +102,7 @@ const merchspawnerhtml = merchandise.map((merch, index) => {
     return `
     <div class="ticketcard">
         <div class="merchImage">
-            <img src="${merch.merchImage}" alt="" width="300px" height="300px">
+            <img src="${merch.merchImage}" alt="no img found" width="300px" height="300px">
         </div>
         <div class="ticketdetails merchdetails">
             <strong>${merch.merchName}</strong>
