@@ -148,5 +148,4 @@ function saveDetails() {
     useremail.value = "";
     userMessage.value = "";
 }
-
 userSubmitBtn.addEventListener("click", saveDetails);
