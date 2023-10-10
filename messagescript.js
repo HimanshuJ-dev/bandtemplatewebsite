@@ -3,15 +3,15 @@ const messageGroup = document.getElementById('groupMessCont');
 const messagearray = []
 
 function showUser() {
-    let p = fetch("http://localhost:3000/stored_messages")
+    let p = fetch("https://jsonplaceholder.typicode.com/comments")
     p.then((value) => {
         return value.json()
     }).then((value) => {
         return value.map((mess, index) => {
             return `<div class="singleUserMessage">
-                <h1>${mess.useremail}</h1>
-                <strong>${mess.username} says:</strong>
-                <h2>${mess.usermessage}</h2>
+                <h1>${mess.email}</h1>
+                <strong>${mess.name} says:</strong>
+                <h2>${mess.body}</h2>
             </div>`
 
         }).join('');
