@@ -1,89 +1,58 @@
 import { concert, monthsList, merchandise } from './concerts.js';
-import { storedmessages } from './storedmessages.js'
 
 let sections = document.querySelectorAll('section');
-let navlinks = document.querySelectorAll('header nav ul li a');
+let navLinks = document.querySelectorAll('header nav ul li a');
 let username = document.getElementById('username');
 let useremail = document.getElementById('useremail');
-let usermessage = document.getElementById('usermessagetext');
-let usersubmitbtn = document.getElementById('usermessagesubmit');
-let merchspawner = document.getElementById('merchspawner');
-// let menucheck = document.getElementById('menu-bar');
-// let menuicon = document.getElementById('hamburgericon');
-// let messages = [];
+let userMessage = document.getElementById('userMessageText');
+let userSubmitBtn = document.getElementById('userMessageSubmit');
+let merchSpawner = document.getElementById('merchSpawner');
 
-// const { value: email } = Swal.fire({
-//     title: 'Input email address',
-//     input: 'email',
-//     inputLabel: 'Your email address',
-//     inputPlaceholder: 'Enter your email address'
-// })
-
-// if (email) {
-//     Swal.fire(`Entered email: ${email}`)
-// }
-
-var email = "";
-
-//testing
-
-// menuicon.innerHTML = `<i class="fa-solid fa-bars fa-2x"></i>`
-
-// let uniquemonths = [
-//     ...new Set(concert.map((month) => month.concertMonth)),
-// ];
-
-function counttickets(month) {
+function countTickets(month) {
     let count = 0;
     concert.map((concrt, index) => {
         if (concrt.concertMonth === month) {
             count++;
         }
     })
-    // console.log(count);
     return count;
 }
 
-//testing
-
-//for mapping months original
-const monthlyspawnerhtml = monthsList.map((month, index) => {
-    if (counttickets(month) !== 0) {
+const monthlySpawnerHtml = monthsList.map((month, index) => {
+    if (countTickets(month) !== 0) {
         return `
-            <div class="specificmonth">
-                    <div class="monthnamestatus">
+            <div class="specificMonth">
+                    <div class="monthNameStatus">
                         <strong>${month}</strong>
                     </div>
-                    <div class="numberoftickets">${counttickets(month)}</div>
+                    <div class="numberOfTickets">${countTickets(month)}</div>
                 </div>
                 <hr>`
     } else {
         return `
-            <div class="specificmonth">
-                    <div class="monthnamestatus">
+            <div class="specificMonth">
+                    <div class="monthNameStatus">
                         <strong>${month}</strong>
-                        <div class="soldoutbanner">Sold Out</div>
+                        <div class="soldOutBanner">Sold Out</div>
                     </div>
                 </div>
                 <hr>`
     }
-    
+
 }).join('')
 
-let monthlyspawner = document.getElementById('concertmonthlyspawner');
-
-const crtid = 12345;
+let monthlySpawner = document.getElementById('concertMonthlySpawner');
 
 //for mapping all tickets
-const ticketspawnerhtml = concert.map((concrt, index) => {
+const ticketSpawnerHtml = concert.map((concrt, index) => {
     return `
-    <div class="ticketcard">
-        <img src="${concrt.concertImage}" alt="" width="300px" height="200px">
-        <div class="ticketdetails">
+    <div class="ticketCard">
+        <img src="${concrt.concertImage}" alt="" class="tickertFetchedImageFromSrc">
+        <div class="ticketDetails">
             <strong>${concrt.concertLocation}</strong>
             <h4>${concrt.concertDate}</h4>
             <p>${concrt.concertDesc}</p>
-            <button onclick="insidehtml(
+            <button onclick="insideHtml(
                 '${concrt.concertImage}',
                 '${concrt.concertMonth}',
                 '${concrt.concertLocation}',
@@ -98,13 +67,13 @@ const ticketspawnerhtml = concert.map((concrt, index) => {
 
 
 
-const merchspawnerhtml = merchandise.map((merch, index) => {
+const merchSpawnerHtml = merchandise.map((merch, index) => {
     return `
-    <div class="ticketcard">
+    <div class="ticketCard">
         <div class="merchImage">
-            <img src="${merch.merchImage}" alt="no img found" width="300px" height="300px">
+            <img src="${merch.merchImage}" alt="no img found" class="merchFetchedImageFromSrc">
         </div>
-        <div class="ticketdetails merchdetails">
+        <div class="ticketDetails merchDetails">
             <strong>${merch.merchName}</strong>
             <h4>${merch.merchCategory}</h4>
             <p>${merch.merchPrize}</p>
@@ -113,13 +82,11 @@ const merchspawnerhtml = merchandise.map((merch, index) => {
     </div>`
 }).join('')
 
-const ticketspawner = document.getElementById('concertticketspawner');
+const ticketSpawner = document.getElementById('concertTicketSpawner');
 
-monthlyspawner.innerHTML = monthlyspawnerhtml;
-ticketspawner.innerHTML = ticketspawnerhtml;
-merchspawner.innerHTML = merchspawnerhtml;
-
-// console.log(storedmessages);
+monthlySpawner.innerHTML = monthlySpawnerHtml;
+ticketSpawner.innerHTML = ticketSpawnerHtml;
+merchSpawner.innerHTML = merchSpawnerHtml;
 
 window.onscroll = () => {
     sections.forEach(sec => {
@@ -129,7 +96,7 @@ window.onscroll = () => {
         let id = sec.getAttribute('id');
 
         if (top >= offset && top < offset + height) {
-            navlinks.forEach(links => {
+            navLinks.forEach(links => {
                 links.classList.remove('active');
                 document.querySelector('header nav ul li a[href*=' + id + ']').classList.add('active');
             })
@@ -137,24 +104,15 @@ window.onscroll = () => {
     })
 }
 
-function savedetails() {
+function saveDetails() {
     let message = {
         id: 'um' + Date.now(),
         usern: username.value,
         usere: useremail.value,
-        userm: usermessage.value
+        userm: userMessage.value
     }
 
-    storedmessages.push(message);
-    console.log(storedmessages);
-
-    // alert('message saved from ' + username.value + '\n' + useremail.value + '\n' + usermessage.value);
-    // console.log(messages);
-
-    
-
-    function creatinguser() {
-
+    function creatingUser() {
 
         let options = {
             method: "POST",
@@ -164,12 +122,12 @@ function savedetails() {
             body: JSON.stringify({
                 "username": username.value,
                 "useremail": useremail.value,
-                "usermessage": usermessage.value,
+                "userMessage": userMessage.value,
                 "userid": 'um' + Date.now()
             },)
         }
 
-        async function addnow() {
+        async function addNow() {
             try {
                 await fetch("http://localhost:3000/stored_messages", options).then(
                     (response) => response.json()
@@ -180,15 +138,14 @@ function savedetails() {
             }
         }
 
-        addnow();
+        addNow();
 
     }
 
-    creatinguser();
+    creatingUser();
 
     username.value = "";
     useremail.value = "";
-    usermessage.value = "";
+    userMessage.value = "";
 }
-
-usersubmitbtn.addEventListener("click", savedetails);
+userSubmitBtn.addEventListener("click", saveDetails);
