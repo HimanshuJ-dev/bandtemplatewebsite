@@ -2,8 +2,8 @@ import { concert, monthsList, merchandise } from './concerts.js';
 
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav ul li a');
-let username = document.getElementById('username');
-let useremail = document.getElementById('useremail');
+let username = document.getElementById('userName');
+let useremail = document.getElementById('userEmail');
 let userMessage = document.getElementById('userMessageText');
 let userSubmitBtn = document.getElementById('userMessageSubmit');
 let merchSpawner = document.getElementById('merchSpawner');
@@ -111,38 +111,40 @@ function saveDetails() {
         usere: useremail.value,
         userm: userMessage.value
     }
+    alert(`Message saved from ${message.usern}\nEmail: ${message.usere}\nMessage: ${message.userm}`)
 
-    function creatingUser() {
+    // function creatingUser() {
 
-        let options = {
-            method: "POST",
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify({
-                "username": username.value,
-                "useremail": useremail.value,
-                "userMessage": userMessage.value,
-                "userid": 'um' + Date.now()
-            },)
-        }
+    //     let options = {
+    //         method: "POST",
+    //         headers: {
+    //             "content-type": "application/json"
+    //         },
+    //         body: JSON.stringify({
+    //             "username": username.value,
+    //             "useremail": useremail.value,
+    //             "userMessage": userMessage.value,
+    //             "userid": 'um' + Date.now()
+    //         },)
+    //     }
+        
 
-        async function addNow() {
-            try {
-                await fetch("http://localhost:3000/stored_messages", options).then(
-                    (response) => response.json()
-                ).then((value) => console.log("added one time"));
-                alert('message saved')
-            } catch (error) {
-                alert('could not save message!\nPlease try again later...');
-            }
-        }
+        // async function addNow() {
+        //     try {
+        //         await fetch("http://localhost:3000/stored_messages", options).then(
+        //             (response) => response.json()
+        //         ).then((value) => console.log("added one time"));
+        //         alert('message saved')
+        //     } catch (error) {
+        //         alert('could not save message!\nPlease try again later...');
+        //     }
+        // }
 
-        addNow();
+        // addNow();
 
-    }
+    // }
 
-    creatingUser();
+    // creatingUser();
 
     username.value = "";
     useremail.value = "";
